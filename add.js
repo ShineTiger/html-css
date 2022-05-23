@@ -13,22 +13,29 @@ const unViewModal = () => {
 
 const handleSaveItem = (name, image, content) => {
   const list = document.querySelector("ul");
-  const cardList = document.querySelector("#cards");
-  const newCard = document.createElement("div");
   const listItem = document.createElement("li");
-  newCard.classList.add("card");
-  newCard.querySelector("#viewimg").src= `${image}`;
-  newCard.querySelector("span").innerText= `${content}`;
 
+  const cardList = document.querySelector(".cards");
+  const newCard = document.createElement("div");
+  const newCardImg = document.createElement("img");
+  const newCardSpan = document.createElement("span");
+
+  newCard.classList.add("card");
+  newCardImg.src= `${image}`;
+  newCardSpan.innerText= `${content}`;
+  listItem.innerText= `${name}`;
+
+  list.appendChild(listItem);  
   cardList.appendChild(newCard);
-  list.innerText= `${name}`;
-  list.appendChild(listItem)
+  newCard.appendChild(newCardImg);
+  newCard.appendChild(newCardSpan);
 
 };
 
 const handleSaveList = (event) => {
   unViewModal();
   event.preventDefault();
+  //const insertInput = document.querySelector("#modal input");
   const name = document.querySelector("#name").value;
   const image = document.querySelector("img").value;
   const content = document.querySelector("#contents").value;
