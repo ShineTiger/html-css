@@ -14,6 +14,7 @@
     <main>
       <nav>
         <ul>
+          <li><button class="add-btn">추가</button></li>
           <li>소주</li>
           <li>맥주</li>
           <li>샴페인</li>
@@ -44,5 +45,18 @@
         </div>
       </section>
     </main>
+    <div id="modal-bg">
+      <form id="modal">
+        <span id="close-btn">X</span>
+        <label for="name">이름</label>
+        <input id="name" type="text" maxlength="20" required >
+        <label for="img">이미지</label>
+        <input id="img" type="text"  required >
+        <label for="contents">내용</label>
+        <input id="contents" type="text"  required >
+        <button id="save-btn" type="submit">저장</button>
+      </form>
+    </div>
+    <script src="add.js"></script>
   </body>
 </html>
